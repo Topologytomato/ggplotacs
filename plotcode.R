@@ -76,10 +76,12 @@ plot2 <- ggplot(data_plot, aes(fill=Type, y=value, x=name)) +
   geom_bar(position="dodge", stat="identity") +
   theme(legend.position = "top") +
   labs(title = paste(variables_need, country_need, "in","Year:{frame_time}")) +
+  theme_classic()+
   theme(
     plot.title = element_text(size = 20L),
     axis.title.y = element_text(size = 13L),
-    axis.title.x = element_text(size = 13L)
+    axis.title.x = element_text(size = 13L),
+    legend.position = "top"
   ) + 
   transition_time(year) +
   ease_aes("linear")
@@ -149,10 +151,12 @@ plot4 <- ggplot(data_plot, aes(fill=Type, y=value, x=name)) +
   geom_bar(position="dodge", stat="identity") +
   theme(legend.position = "top") +
   labs(title = paste(variables_need, country_need, "in",year_need)) +
+  theme_classic()+
   theme(
     plot.title = element_text(size = 20L),
     axis.title.y = element_text(size = 13L),
-    axis.title.x = element_text(size = 13L)
+    axis.title.x = element_text(size = 13L),
+    legend.position = "top"
   )
 
 png(file= paste("type4", country_need, variables_need, year_need, ".png", sep = '_'),
@@ -182,10 +186,12 @@ plot5 <- ggplot(data_plot, aes(fill=Type, y=value, x=year)) +
   geom_bar(position="dodge", stat="identity") +
   theme(legend.position = "top") +
   labs(title = paste(variables_need,"in", country_need)) +
+  theme_classic()+
   theme(
     plot.title = element_text(size = 20L),
     axis.title.y = element_text(size = 13L),
-    axis.title.x = element_text(size = 13L)
+    axis.title.x = element_text(size = 13L),
+    legend.position = "top"
 )
 
 png(file= paste("type5", country_need, variables_need,".png", sep = '_'),
@@ -194,8 +200,7 @@ plot5
 dev.off()
 
 ################################################################
-# plot 6 more than 1 varaibles in line charts
-# plot 5 bar plot with year
+# plot 6 line plot with year
 # Variable type: both single or multiple
 # recommend variables: all
 
@@ -215,6 +220,7 @@ data_plot <- data_plot %>% filter(tolower(name) == tolower(state_need))
 plot6 <- ggplot(data = data_plot,aes(x=year, y=value,group = Type, color=Type, shape=Type))+
   geom_point()+
   geom_line(linewidth = 1.2)+
+  theme_classic()+
   theme(
     plot.title = element_text(size = 20L),
     axis.title.y = element_text(size = 16L),
