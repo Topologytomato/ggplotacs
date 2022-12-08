@@ -156,6 +156,8 @@ plot4 <- ggplot(data_plot, aes(fill=Type, y=value, x=name)) +
     plot.title = element_text(size = 20L),
     axis.title.y = element_text(size = 13L),
     axis.title.x = element_text(size = 13L),
+    axis.text.x = element_text(size = 9L),
+    axis.text.y = element_text(size = 9L),
     legend.position = "top"
   )
 
@@ -191,6 +193,8 @@ plot5 <- ggplot(data_plot, aes(fill=Type, y=value, x=year)) +
     plot.title = element_text(size = 20L),
     axis.title.y = element_text(size = 13L),
     axis.title.x = element_text(size = 13L),
+    axis.text.x = element_text(size = 10L),
+    axis.text.y = element_text(size = 10L),
     legend.position = "top"
 )
 
@@ -225,6 +229,8 @@ plot6 <- ggplot(data = data_plot,aes(x=year, y=value,group = Type, color=Type, s
     plot.title = element_text(size = 20L),
     axis.title.y = element_text(size = 16L),
     axis.title.x = element_text(size = 16L),
+    axis.text.x = element_text(size = 10L),
+    axis.text.y = element_text(size = 10L),
     legend.position = "top"
   )
 
