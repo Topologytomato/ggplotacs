@@ -131,7 +131,10 @@ variables_need <- "Family Poverty"
 data_need <- raw_data[grep(variables_need, raw_data$Type), ] %>% 
   filter(tolower(country) == tolower(country_need))
 data_plot <- pivot_longer(data_need,cols = colnames(data_need)[4:dim(data_need)[2]])
-data_plot$year <- as.integer(data_plot$year)
+
+#!!!!!!!!!!!!!
+data_plot$year <- as.character(data_plot$year)
+#!!!!!!!!!!!!!
 
 plot5 <- ggplot(data_plot, aes(fill=Type, y=value, x=year)) + 
   geom_bar(position="dodge", stat="identity") +
